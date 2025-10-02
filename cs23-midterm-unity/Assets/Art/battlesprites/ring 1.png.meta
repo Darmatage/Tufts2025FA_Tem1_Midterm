@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c1ed712c9c25447d5bcd4d908138468b
+guid: 7228e71e971330344b099d879f71a34e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3800179035099812209
-    second: CompressJPEG.Online_img(1280x720)_0
+      213: -3147085925924110749
+    second: ring 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CompressJPEG.Online_img(1280x720)_0
+      name: ring 1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1280
-        height: 720
+        x: 47
+        y: 47
+        width: 418
+        height: 418
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 171d20eb2b2fcb430800000000000000
-      internalID: 3800179035099812209
+      spriteID: 36e79ab360e4354d0800000000000000
+      internalID: -3147085925924110749
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      CompressJPEG.Online_img(1280x720)_0: 3800179035099812209
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
