@@ -1,13 +1,18 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class CircleSpawner : MonoBehaviour
 {
-    public GameObject circlePrefab;   // assign your circle prefab in inspector
-    public float spawnInterval = 1.5f; // time between spawns
+    public GameObject circlePrefab;
+    public float spawnInterval; // time between spawns
+    public float circleLifetime; // how long a circle can be clicked
+
     public Vector2 spawnAreaMin = new Vector2(-5f, -3f);
     public Vector2 spawnAreaMax = new Vector2(5f, 3f);
 
     private float timer;
+    private List<CircleData> circles = new List<CircleData>();
+    private int nextCircleIndex = 0;
 
     void Update()
     {
@@ -17,6 +22,20 @@ public class CircleSpawner : MonoBehaviour
             SpawnCircle();
             timer = 0f;
         }
+
+        // Auto-remove expired circles
+        for (int i = 0; i < circles.Count; i++)
+        {
+            if (!circles[i].hit && Time.time - circles[i].spawnTime >= circleLifetime)
+            {
+                circles[i].circle.CircleMissed();
+                circles[i].hit = true;
+
+                // Move to next circle if the missed one was next
+                if (i == nextCircleIndex)
+                    nextCircleIndex++;
+            }
+        }
     }
 
     void SpawnCircle()
@@ -24,8 +43,31 @@ public class CircleSpawner : MonoBehaviour
         float x = Random.Range(spawnAreaMin.x, spawnAreaMax.x);
         float y = Random.Range(spawnAreaMin.y, spawnAreaMax.y);
 
-        Vector2 spawnPos = new Vector2(x, y);
+        Vector3 spawnPos = new Vector3(x, y, -nextCircleIndex * 0.01f);
+        GameObject newCircle = Instantiate(circlePrefab, spawnPos, Quaternion.identity);
+        CircleScript circleScript = newCircle.GetComponent<CircleScript>();
+        circleScript.spawner = this;
+        circleScript.SetLabel((circles.Count + 1).ToString());
 
-        Instantiate(circlePrefab, spawnPos, Quaternion.identity);
+        circles.Add(new CircleData { circle = circleScript, spawnTime = Time.time, hit = false });
+    }
+
+    public bool TryHit(CircleScript circle)
+    {
+        if (nextCircleIndex < circles.Count && circles[nextCircleIndex].circle == circle)
+        {
+            circles[nextCircleIndex].hit = true;
+            nextCircleIndex++;
+            return true;
+        }
+        return false;
+    }
+
+    // Data structure to track each circle
+    private class CircleData
+    {
+        public CircleScript circle;
+        public float spawnTime;
+        public bool hit;
     }
 }

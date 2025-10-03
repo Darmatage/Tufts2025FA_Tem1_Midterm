@@ -268,7 +268,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   circlePrefab: {fileID: 6485943199981153549, guid: 7a199ab2aa517da4ea562096f191e47a, type: 3}
-  spawnInterval: 0.5
+  spawnInterval: 0.7
+  circleLifetime: 1.5
   spawnAreaMin: {x: -5, y: -3}
   spawnAreaMax: {x: 5, y: 3}
 --- !u!4 &1794799381
@@ -423,68 +424,10 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!1001 &4259660503419615703
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2676652448106183818, guid: 7a199ab2aa517da4ea562096f191e47a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.669
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676652448106183818, guid: 7a199ab2aa517da4ea562096f191e47a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.2527657
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676652448106183818, guid: 7a199ab2aa517da4ea562096f191e47a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -8.999659
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676652448106183818, guid: 7a199ab2aa517da4ea562096f191e47a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676652448106183818, guid: 7a199ab2aa517da4ea562096f191e47a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676652448106183818, guid: 7a199ab2aa517da4ea562096f191e47a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676652448106183818, guid: 7a199ab2aa517da4ea562096f191e47a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676652448106183818, guid: 7a199ab2aa517da4ea562096f191e47a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676652448106183818, guid: 7a199ab2aa517da4ea562096f191e47a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676652448106183818, guid: 7a199ab2aa517da4ea562096f191e47a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6485943199981153549, guid: 7a199ab2aa517da4ea562096f191e47a, type: 3}
-      propertyPath: m_Name
-      value: Circle
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7a199ab2aa517da4ea562096f191e47a, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1940169147}
   - {fileID: 1057919608}
-  - {fileID: 4259660503419615703}
   - {fileID: 1794799381}
