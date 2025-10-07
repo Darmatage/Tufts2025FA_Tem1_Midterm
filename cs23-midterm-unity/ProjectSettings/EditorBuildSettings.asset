@@ -9,8 +9,20 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 15c790193401aba4cbf6b3b1f288394a
+  - enabled: 1
     path: Assets/Scenes/attackphase.unity
     guid: c03c35390df54014faf7d1c49e08c1aa
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 1f2215728da7b024599ed9f122e60c2f
+  - enabled: 1
+    path: Assets/Scenes/SceneLose.unity
+    guid: 57095f0e303f91d41a7210fabbae4b78
+  - enabled: 1
+    path: Assets/Scenes/SceneWin.unity
+    guid: 2f2ab4adf7655da4f9fcc7826529742e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

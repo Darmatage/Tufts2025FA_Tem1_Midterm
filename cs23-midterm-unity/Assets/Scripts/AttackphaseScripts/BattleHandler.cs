@@ -3,18 +3,20 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class BattleHandlerScript : MonoBehaviour
 {
     public Button attackButton;
     public CircleSpawner circleSpawner;
     public EnemyScript enemy;
-    public GameObject winText;
     public int dmgperhit;
+    public bool gamePaused;
 
     void Start()
     {
-        winText.SetActive(false);
+
     }
     public void attackEnemy()
     {
@@ -35,7 +37,8 @@ public class BattleHandlerScript : MonoBehaviour
 
     public void playerWin()
     {
-        winText.SetActive(true);
         attackButton.gameObject.SetActive(false);
+        SceneManager.LoadScene("SceneWin");
+
     }
 }
