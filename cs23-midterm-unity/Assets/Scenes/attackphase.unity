@@ -368,17 +368,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 617110713}
---- !u!1 &705000656 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8040057296962162615, guid: 5c563464bbd15b348bad73ae8d0cf37c, type: 3}
-  m_PrefabInstance: {fileID: 2395064535434031837}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &705000657 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7909902722630221478, guid: 5c563464bbd15b348bad73ae8d0cf37c, type: 3}
   m_PrefabInstance: {fileID: 2395064535434031837}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 705000656}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 19485bf21cb653e46a00cfe3ddf13f2e, type: 3}
@@ -1727,7 +1722,19 @@ PrefabInstance:
     - target: {fileID: 9071398050924059407, guid: 469b2fe84ec098d459ef0ea7e58e9499, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 705000656}
+      objectReference: {fileID: 705000657}
+    - target: {fileID: 9071398050924059407, guid: 469b2fe84ec098d459ef0ea7e58e9499, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResumeGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 9071398050924059407, guid: 469b2fe84ec098d459ef0ea7e58e9499, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9071398050924059407, guid: 469b2fe84ec098d459ef0ea7e58e9499, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
