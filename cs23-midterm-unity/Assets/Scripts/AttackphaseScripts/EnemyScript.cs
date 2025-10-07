@@ -1,16 +1,34 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.UI;
+using System.Linq.Expressions;
 
 public class EnemyScript : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public int maxHealth = 100;
+    public int currentHealth;
+    public HealthBarScript healthBar;
+
+    public BattleHandlerScript battleHandler;
+
     void Start()
     {
-        
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TakeDamage(int damage)
     {
-        
+        currentHealth -= damage;
+        if (currentHealth <= 0)
+        {
+            currentHealth = 0;
+            Destroy(gameObject);
+            battleHandler.playerWin();
+        }
+        healthBar.SetHealth(currentHealth);
+
     }
+
 }

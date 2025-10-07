@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c9d709dd1abb29242b5903cfea4856ba
+guid: f687f423dc4537842af633d107ef3530
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9074187217735159194
-    second: vecteezy_an-8-bit-retro-styled-pixel-art-illustration-of-a-red_19527042_0
+      213: -3925586578109035572
+    second: fighting_scene_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: vecteezy_an-8-bit-retro-styled-pixel-art-illustration-of-a-red_19527042_0
+      name: fighting_scene_0
       rect:
         serializedVersion: 2
-        x: 249
-        y: 999
-        width: 3440
-        height: 2502
+        x: 0
+        y: 0
+        width: 1280
+        height: 720
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a9d8e7a823dfded70800000000000000
-      internalID: 9074187217735159194
+      spriteID: ccb05cc4ec38589c0800000000000000
+      internalID: -3925586578109035572
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      vecteezy_an-8-bit-retro-styled-pixel-art-illustration-of-a-red_19527042_0: 9074187217735159194
+      fighting_scene_0: -3925586578109035572
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
