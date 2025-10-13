@@ -28,9 +28,15 @@ public class GameHandler : MonoBehaviour{
     }
 
 
-    public void StartGame() {
+    public void StartGame()
+    {
+        SceneManager.LoadScene("StageSelect");
+    }
+    
+    public void StartBattle() {
         SceneManager.LoadScene("attackphase");
     }
+
 
     public void ResumeGame()
     {
