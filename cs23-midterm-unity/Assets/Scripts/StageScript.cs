@@ -6,7 +6,7 @@ public class StageScript : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
-    public string sceneToLoad;
+    public string stageToLoad;
     public Color highlightColor = Color.yellow;
     public float glowIntensity = 1.5f;
 
@@ -28,13 +28,7 @@ public class StageScript : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (!string.IsNullOrEmpty(sceneToLoad))
-        {
-            SceneManager.LoadScene(sceneToLoad);
-        }
-        else
-        {
-            Debug.Log($"No scene assigned for {gameObject.name}");
-        }
+        StageData.selectedStage = stageToLoad;
+        SceneManager.LoadScene("attackphase");
     }
 }

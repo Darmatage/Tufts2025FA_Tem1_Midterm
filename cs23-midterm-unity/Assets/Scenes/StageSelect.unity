@@ -306,7 +306,7 @@ GameObject:
   - component: {fileID: 306079456}
   - component: {fileID: 306079457}
   m_Layer: 0
-  m_Name: MatchaCafe
+  m_Name: CafeMatcha
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -394,7 +394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44021f72998816648952910f93378d8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: 
+  stageToLoad: CafeMatcha
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
   glowIntensity: 1.5
 --- !u!61 &306079457
@@ -646,7 +646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44021f72998816648952910f93378d8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: 
+  stageToLoad: VintageStore
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
   glowIntensity: 1.5
 --- !u!61 &352168111
@@ -1186,7 +1186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44021f72998816648952910f93378d8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: 
+  stageToLoad: Bench
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
   glowIntensity: 1.5
 --- !u!61 &1004203189

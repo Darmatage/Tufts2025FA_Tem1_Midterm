@@ -206,7 +206,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: 297761703447499198, guid: 454d52f4093c8bb4390d890702f65347, type: 3}
-  m_Color: {r: 1, g: 0.87058824, b: 0.7529412, a: 1}
+  m_Color: {r: 1, g: 0.8986972, b: 0.8066038, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -245,10 +245,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cf096a4b45b6874183846c369056f32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  background: {fileID: 2131124224}
+  parkBG: {fileID: -3925586578109035572, guid: f687f423dc4537842af633d107ef3530, type: 3}
+  cafeBG: {fileID: -8527442550737655860, guid: 63214f5c294414080ad2548f847a9594, type: 3}
+  vintageBG: {fileID: -3925586578109035572, guid: f687f423dc4537842af633d107ef3530, type: 3}
   attackButton: {fileID: 1394031423}
   circleSpawner: {fileID: 1794799380}
   enemy: {fileID: 1057919610}
   dmgperhit: 3
+  difficulty: 0
   gamePaused: 0
 --- !u!4 &279402502
 Transform:
@@ -846,7 +851,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1478,7 +1483,7 @@ GameObject:
   - component: {fileID: 2131124226}
   - component: {fileID: 2131124225}
   m_Layer: 0
-  m_Name: fighting_scene_0
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
