@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      matcha_cafe_building_1_0: 7683921060957395655
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
