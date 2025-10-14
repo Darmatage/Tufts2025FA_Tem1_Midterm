@@ -1,5 +1,7 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DodgePhaseManager : MonoBehaviour
 {
@@ -12,9 +14,10 @@ public class DodgePhaseManager : MonoBehaviour
     public GameObject enemyLeftPunch;
     public GameObject enemyRightPunch;
     public GameObject enemyTopPunch;
-    
+
     [Header("Player")]
     public GameObject player;  // Drag your Player GameObject here
+    public PlayerScript playerScript;
     public GameObject enemy;
     public GameObject redFlash;
     
@@ -23,6 +26,7 @@ public class DodgePhaseManager : MonoBehaviour
     public float timeBetweenAttacks = 1.5f;
     public float dodgeSpeed = 10f;  // How fast player moves
     public float enemyMoveSpeed = 8f;  // Speed for enemy movement
+    private int numAttacks;
     
     private Vector3 defaultPosition = new Vector3(1.1f, -0.4f, 0.001f);
     private Vector3 leftDodgePosition = new Vector3(-2.08f, -0.72f, 0.001f);
@@ -37,12 +41,22 @@ public class DodgePhaseManager : MonoBehaviour
     private enum AttackDirection { Left, Right, Top }
     private AttackDirection currentAttack;
     private bool waitingForInput = false;
-    
+
+    private AudioSource audioSource;
     void Start()
     {
+        int difficulty = StageData.stageDifficulty;
         player.transform.position = defaultPosition;
         enemy.transform.position = enemyDefaultPosition;  // Set enemy starting position
+        audioSource = GetComponent<AudioSource>();
+
+        // warningDuration = 0.6f - (difficulty * 0.1f);
+        // timeBetweenAttacks = 1.8f - (difficulty * 0.12f);
+
+        numAttacks = difficulty * 5;
+
         StartCoroutine(AttackCycle());
+
     }
     
     void Update()
@@ -55,31 +69,31 @@ public class DodgePhaseManager : MonoBehaviour
     
     IEnumerator AttackCycle()
     {
-        while (true)
+        while (numAttacks > 0)
         {
             // Wait between attacks
             yield return new WaitForSeconds(timeBetweenAttacks);
-            
+
             // Pick random attack
             currentAttack = (AttackDirection)Random.Range(0, 3);
-            
+
             // Show warning and START checking for input
             ShowWarning(currentAttack);
             waitingForInput = true;
-            
+
             float timer = 0;
             while (waitingForInput && timer < warningDuration)
             {
                 timer += Time.deltaTime;
                 yield return null;
             }
-            
+
             // Hide warning
             HideWarning(currentAttack);
-            
+
             // Show attack regardless of success/failure
             ShowAttack(currentAttack);
-            
+
             // Check if player dodged in time
             if (waitingForInput)
             {
@@ -87,12 +101,14 @@ public class DodgePhaseManager : MonoBehaviour
                 Failed();
             }
             // If waitingForInput is false, Success() was already called
-            
+
             yield return new WaitForSeconds(0.3f);
             HideAttack(currentAttack);
-            
+
             waitingForInput = false;
         }
+
+        SceneManager.LoadScene("attackphase");
     }
     
     void ShowWarning(AttackDirection direction)
@@ -222,6 +238,7 @@ public class DodgePhaseManager : MonoBehaviour
     {
         waitingForInput = false;
         Debug.Log("Dodged successfully!");
+        numAttacks--;
         StartCoroutine(DodgeMovement(dodgePosition));
     }
     
@@ -229,6 +246,12 @@ public class DodgePhaseManager : MonoBehaviour
     {
         waitingForInput = false;
         Debug.Log("Hit! Take damage");
+
+        int damage = StageData.stageDifficulty * 3;
+        playerScript.TakeDamage(damage);
+        numAttacks--;
+        audioSource.time = 0.8f;
+        audioSource.Play();
         StartCoroutine(RedFlashEffect());
     }
 

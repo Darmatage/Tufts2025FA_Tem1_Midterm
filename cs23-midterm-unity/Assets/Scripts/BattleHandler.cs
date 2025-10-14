@@ -8,11 +8,18 @@ using UnityEngine.SceneManagement;
 
 public class BattleHandlerScript : MonoBehaviour
 {
+
     public GameObject background;
     private SpriteRenderer backgroundImage;
+    public SpriteRenderer enemyIMG;
     public Sprite parkBG;
+    public Sprite parkguy;
+
     public Sprite cafeBG;
+    public Sprite cafeguy;
+
     public Sprite vintageBG;
+    public Sprite vintageguy;
 
     public Button attackButton;
     public Button dodgeButton;
@@ -30,12 +37,15 @@ public class BattleHandlerScript : MonoBehaviour
         {
             case "CafeMatcha":
                 backgroundImage.sprite = cafeBG;
+                enemyIMG.sprite = cafeguy;
                 break;
             case "Bench":
                 backgroundImage.sprite = parkBG;
+                enemyIMG.sprite = parkguy;
                 break;
             case "VintageStore":
                 backgroundImage.sprite = vintageBG;
+                enemyIMG.sprite = vintageguy;
                 break;
             default:
                 break;

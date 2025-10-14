@@ -9,9 +9,10 @@ using UnityEditor;
 using Unity.VisualScripting;
 
 public class GameHandler : MonoBehaviour{
-    public static int playerStat1;
 
     public GameObject pauseMenu;
+    
+
     void Start()
     {
         if (pauseMenu != null)
@@ -37,6 +38,10 @@ public class GameHandler : MonoBehaviour{
         SceneManager.LoadScene("attackphase");
     }
 
+    public void PlayerDie()
+    {
+        SceneManager.LoadScene("SceneLose");
+    }
 
     public void ResumeGame()
     {

@@ -17,7 +17,7 @@ public class StageScript : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalColor = spriteRenderer.color;
-        infoText.text = "Hover over special locations of the map to see which jobs you can take on!";
+        infoText.text = "You're a buddy for hire who usually is hired to fight. Press z/x to punch and arrow keys to dodge. Hover over special locations of the map to see which jobs you can take on!";
     }
 
     void OnMouseEnter()
@@ -43,7 +43,7 @@ public class StageScript : MonoBehaviour
     void OnMouseExit()
     {
         spriteRenderer.color = originalColor;
-        infoText.text = "Hover over special locations of the map to see which jobs you can take on!";
+        infoText.text = "You're a buddy for hire who usually is hired to fight. Press z/x to punch and arrow keys to dodge. Hover over special locations of the map to see which jobs you can take on!";
     }
 
     void OnMouseDown()
@@ -53,12 +53,21 @@ public class StageScript : MonoBehaviour
         {
             case "CafeMatcha":
                 StageData.stageDifficulty = 1;
+                HealthData.Instance.playerHP = 100;
+                HealthData.Instance.enemyMaxHP = 100;
+                HealthData.Instance.enemyHP = 100;
                 break;
             case "Bench":
                 StageData.stageDifficulty = 2;
+                HealthData.Instance.playerHP = 100;
+                HealthData.Instance.enemyMaxHP = 200;
+                HealthData.Instance.enemyHP = 200;
                 break;
             case "VintageStore":
                 StageData.stageDifficulty = 3;
+                HealthData.Instance.playerHP = 100;
+                HealthData.Instance.enemyMaxHP = 300;
+                HealthData.Instance.enemyHP = 300;
                 break;
             default:
                 break;

@@ -4,20 +4,19 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using System.Linq.Expressions;
 
-public class EnemyScript : MonoBehaviour
+public class PlayerScript : MonoBehaviour
 {
-
 
     public int maxHealth;
     public int currentHealth;
     public HealthBarScript healthBar;
+    public GameHandler gameHandler;
 
-    public BattleHandlerScript battleHandler;
 
     void Start()
     {
-        maxHealth = HealthData.Instance.enemyMaxHP;
-        currentHealth = HealthData.Instance.enemyHP;
+        maxHealth = HealthData.Instance.playerMaxHP;
+        currentHealth = HealthData.Instance.playerHP;
         healthBar.SetMaxHealth(maxHealth);
         healthBar.SetHealth(currentHealth);
     }
@@ -25,12 +24,11 @@ public class EnemyScript : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        HealthData.Instance.enemyHP -= damage;
+        HealthData.Instance.playerHP -= damage;
         if (currentHealth <= 0)
         {
             currentHealth = 0;
-            Destroy(gameObject);
-            battleHandler.playerWin();
+            gameHandler.PlayerDie();
         }
         healthBar.SetHealth(currentHealth);
 
