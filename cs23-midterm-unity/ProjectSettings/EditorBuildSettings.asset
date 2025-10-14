@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StageSelect.unity
     guid: f475a0bb89055d847b92dcb04a77fd50
+  - enabled: 1
+    path: Assets/Scenes/dodgePhase.unity
+    guid: 00d9f7759548c465da10ee37eb3e5244
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

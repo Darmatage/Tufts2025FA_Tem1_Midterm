@@ -15,6 +15,7 @@ public class BattleHandlerScript : MonoBehaviour
     public Sprite vintageBG;
 
     public Button attackButton;
+    public Button dodgeButton;
     public CircleSpawner circleSpawner;
     public EnemyScript enemy;
     public int dmgperhit;
@@ -55,9 +56,13 @@ public class BattleHandlerScript : MonoBehaviour
         enemy.TakeDamage(damage);
         if (enemy.currentHealth > 0)
         {
-            attackButton.gameObject.SetActive(true);
+            dodgeButton.gameObject.SetActive(true);
         }
+    }
 
+    public void dodge()
+    {
+        SceneManager.LoadScene("dodgePhase");
     }
 
     public void playerWin()
