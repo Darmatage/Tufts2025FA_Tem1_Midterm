@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.43274036, y: 0.43274036, z: 0.43238416}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2676652448106183818}
@@ -76,12 +76,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2532087816333192471, guid: 3c9c0e154a340ad48b3dd11349abecbd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3c9c0e154a340ad48b3dd11349abecbd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4.18, y: 4.18}
+  m_Size: {x: 9.8, y: 9.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -140,9 +140,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 223123441802132046}
-  defaultImage: {fileID: -2532087816333192471, guid: 3c9c0e154a340ad48b3dd11349abecbd, type: 3}
-  pressedImage: {fileID: -3147085925924110749, guid: 7228e71e971330344b099d879f71a34e, type: 3}
-  wrongImage: {fileID: -6737533261266040267, guid: 31d1e162d13580b4686f3aaed4ae9ccd, type: 3}
+  defaultImage: {fileID: 21300000, guid: 3c9c0e154a340ad48b3dd11349abecbd, type: 3}
+  pressedImage: {fileID: 21300000, guid: 7228e71e971330344b099d879f71a34e, type: 3}
+  wrongImage: {fileID: 21300000, guid: 31d1e162d13580b4686f3aaed4ae9ccd, type: 3}
   spawner: {fileID: 0}
   label: {fileID: 1824077781093078000}
 --- !u!58 &338200850485662673
@@ -337,8 +337,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -361,7 +361,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535

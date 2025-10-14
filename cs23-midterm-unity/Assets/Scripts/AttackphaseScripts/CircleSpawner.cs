@@ -21,6 +21,10 @@ public class CircleSpawner : MonoBehaviour
     private int circlesHit = 0;
     private bool spawningActive = false;
 
+    public AudioSource audioSource;       
+    public AudioClip[] punchSounds;
+
+
     void Update()
     {
 
@@ -83,11 +87,19 @@ public class CircleSpawner : MonoBehaviour
             circles[nextCircleIndex].hit = true;
             nextCircleIndex++;
             circlesHit++;
+            PlayPunchSound();
             return true;
         }
         return false;
     }
 
+    public void PlayPunchSound()
+    {
+        if (punchSounds.Length == 0) return;
+
+        int index = Random.Range(0, punchSounds.Length);
+        audioSource.PlayOneShot(punchSounds[index]);
+    }
     public void StartSpawning(int numCircles, float spawntime, float circletime)
     {
         foreach (var data in circles)

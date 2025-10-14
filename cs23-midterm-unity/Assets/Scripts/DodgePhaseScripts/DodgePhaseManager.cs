@@ -12,9 +12,10 @@ public class DodgePhaseManager : MonoBehaviour
     public GameObject enemyLeftPunch;
     public GameObject enemyRightPunch;
     public GameObject enemyTopPunch;
-    
+
     [Header("Player")]
     public GameObject player;  // Drag your Player GameObject here
+    public PlayerScript playerScript;
     public GameObject enemy;
     public GameObject redFlash;
     
@@ -229,6 +230,8 @@ public class DodgePhaseManager : MonoBehaviour
     {
         waitingForInput = false;
         Debug.Log("Hit! Take damage");
+        int damage = StageData.stageDifficulty * 3;
+        playerScript.TakeDamage(damage);
         StartCoroutine(RedFlashEffect());
     }
 

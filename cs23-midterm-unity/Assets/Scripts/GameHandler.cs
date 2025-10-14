@@ -37,6 +37,10 @@ public class GameHandler : MonoBehaviour{
         SceneManager.LoadScene("attackphase");
     }
 
+    public void PlayerDie()
+    {
+        SceneManager.LoadScene("SceneLose");
+    }
 
     public void ResumeGame()
     {
