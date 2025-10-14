@@ -510,9 +510,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   background: {fileID: 679655433}
+  enemyIMG: {fileID: 1373063885}
   parkBG: {fileID: -3925586578109035572, guid: f687f423dc4537842af633d107ef3530, type: 3}
+  parkguy: {fileID: 5435608014139152121, guid: 69f502e043ffe9a4281e57ba97841e93, type: 3}
   cafeBG: {fileID: -8527442550737655860, guid: 63214f5c294414080ad2548f847a9594, type: 3}
+  cafeguy: {fileID: -4335991441621654067, guid: 69f502e043ffe9a4281e57ba97841e93, type: 3}
   vintageBG: {fileID: 21300000, guid: f9e40bab61d90414087c0a29b5646c7e, type: 3}
+  vintageguy: {fileID: 3680619090928529440, guid: 454d52f4093c8bb4390d890702f65347, type: 3}
   attackButton: {fileID: 0}
   dodgeButton: {fileID: 0}
   circleSpawner: {fileID: 0}
