@@ -5,29 +5,35 @@ using UnityEngine.SceneManagement;
 
 public class DodgePhaseManager : MonoBehaviour
 {
-    [Header("Warning Indicators")]
+
+    // Warnings
     public GameObject leftWarning;
     public GameObject rightWarning;
     public GameObject topWarning;
     
-    [Header("Enemy Attacks")]
+    // Enemy Attacks
     public GameObject enemyLeftPunch;
     public GameObject enemyRightPunch;
     public GameObject enemyTopPunch;
 
-    [Header("Player")]
-    public GameObject player;  // Drag your Player GameObject here
+    // Screen object references
+    public GameObject player;  
     public PlayerScript playerScript;
     public GameObject enemy;
     public GameObject redFlash;
     
-    [Header("Timing Settings")]
+    // Timing settings
     public float warningDuration = 0.5f;
     public float timeBetweenAttacks = 1.5f;
-    public float dodgeSpeed = 10f;  // How fast player moves
-    public float enemyMoveSpeed = 8f;  // Speed for enemy movement
+
+    // How fast player moves
+    public float dodgeSpeed = 10f;  
+
+    // Speed for enemy movement
+    public float enemyMoveSpeed = 8f; 
     private int numAttacks;
     
+    // Positions found by trial and error
     private Vector3 defaultPosition = new Vector3(1.1f, -0.4f, 0.001f);
     private Vector3 leftDodgePosition = new Vector3(-2.08f, -0.72f, 0.001f);
     private Vector3 rightDodgePosition = new Vector3(4.02f, -0.72f, 0.001f);
@@ -43,15 +49,13 @@ public class DodgePhaseManager : MonoBehaviour
     private bool waitingForInput = false;
 
     private AudioSource audioSource;
+
     void Start()
     {
         int difficulty = StageData.stageDifficulty;
         player.transform.position = defaultPosition;
-        enemy.transform.position = enemyDefaultPosition;  // Set enemy starting position
+        enemy.transform.position = enemyDefaultPosition; 
         audioSource = GetComponent<AudioSource>();
-
-        // warningDuration = 0.6f - (difficulty * 0.1f);
-        // timeBetweenAttacks = 1.8f - (difficulty * 0.12f);
 
         numAttacks = difficulty * 5;
 
@@ -127,9 +131,9 @@ public class DodgePhaseManager : MonoBehaviour
 
     IEnumerator PunchAnimation(GameObject punchObject)
     {
-        float duration = 0.1f;  // How long the punch animation takes
-        float startScale = 0.2f;  // Starting size
-        float endScale = 0.5f;      // End size 
+        float duration = 0.1f; 
+        float startScale = 0.2f; 
+        float endScale = 0.5f;  
         
         float elapsed = 0f;
         
@@ -141,7 +145,7 @@ public class DodgePhaseManager : MonoBehaviour
             yield return null;
         }
         
-        // Ensure it ends at full scale
+        // Make sure it ends at full scale
         punchObject.transform.localScale = new Vector3(endScale, endScale, 1f);
     }
 
@@ -154,7 +158,7 @@ public class DodgePhaseManager : MonoBehaviour
             yield return null;
         }
         
-        // Wait briefly
+        // Waiting briefly
         yield return new WaitForSeconds(0.2f);
         
         // Return to default position
@@ -164,7 +168,7 @@ public class DodgePhaseManager : MonoBehaviour
             yield return null;
         }
         
-        enemy.transform.position = enemyDefaultPosition;  // Snap to exact position
+        enemy.transform.position = enemyDefaultPosition;  
     }
     
     void ShowAttack(AttackDirection direction)
@@ -184,7 +188,6 @@ public class DodgePhaseManager : MonoBehaviour
         else if (direction == AttackDirection.Top)
         {
             attackObject = enemyTopPunch;
-            // No enemy movement for top punch
         }
         
         if (attackObject != null)
@@ -205,6 +208,7 @@ public class DodgePhaseManager : MonoBehaviour
         if (attackObject != null)
         {
             attackObject.SetActive(false);
+
             // Reset scale for next time
             attackObject.transform.localScale = new Vector3(1f, 1f, 1f);
         }
@@ -212,22 +216,23 @@ public class DodgePhaseManager : MonoBehaviour
     
     void CheckPlayerInput()
     {
-        // Attack from RIGHT → dodge LEFT
+        // Attack from right meaning dodge left
         if (currentAttack == AttackDirection.Right && Input.GetKeyDown(KeyCode.LeftArrow))
         {
             Success(leftDodgePosition);
         }
-        // Attack from LEFT → dodge RIGHT
+        // Attack from left meaning dodge right
         else if (currentAttack == AttackDirection.Left && Input.GetKeyDown(KeyCode.RightArrow))
         {
             Success(rightDodgePosition);
         }
-        // Attack from TOP → dodge DOWN
+        // Attack from top meaning dodge down
         else if (currentAttack == AttackDirection.Top && Input.GetKeyDown(KeyCode.DownArrow))
         {
             Success(downDodgePosition);
         }
-        // Wrong input
+
+        // Incorrect input
         else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.DownArrow))
         {
             Failed();
@@ -258,12 +263,13 @@ public class DodgePhaseManager : MonoBehaviour
     IEnumerator RedFlashEffect()
     {
         redFlash.SetActive(true);
-        yield return new WaitForSeconds(0.3f);  // Flash duration
+        yield return new WaitForSeconds(0.3f); 
         redFlash.SetActive(false);
     }
     
     IEnumerator DodgeMovement(Vector3 targetPosition)
     {
+        
         // Move to dodge position
         while (Vector3.Distance(player.transform.position, targetPosition) > 0.01f)
         {
@@ -271,7 +277,7 @@ public class DodgePhaseManager : MonoBehaviour
             yield return null;
         }
         
-        // Wait briefly
+        // Waiting briefly
         yield return new WaitForSeconds(0.2f);
         
         // Return to default position
@@ -281,6 +287,6 @@ public class DodgePhaseManager : MonoBehaviour
             yield return null;
         }
         
-        player.transform.position = defaultPosition;  // Snap to exact position
+        player.transform.position = defaultPosition; 
     }
 }
