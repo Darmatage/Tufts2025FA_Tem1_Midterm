@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -41,11 +42,13 @@ public class DodgePhaseManager : MonoBehaviour
     private AttackDirection currentAttack;
     private bool waitingForInput = false;
 
+    private AudioSource audioSource;
     void Start()
     {
         int difficulty = StageData.stageDifficulty;
         player.transform.position = defaultPosition;
         enemy.transform.position = enemyDefaultPosition;  // Set enemy starting position
+        audioSource = GetComponent<AudioSource>();
 
         // warningDuration = 0.6f - (difficulty * 0.1f);
         // timeBetweenAttacks = 1.8f - (difficulty * 0.12f);
@@ -243,9 +246,12 @@ public class DodgePhaseManager : MonoBehaviour
     {
         waitingForInput = false;
         Debug.Log("Hit! Take damage");
+
         int damage = StageData.stageDifficulty * 3;
         playerScript.TakeDamage(damage);
         numAttacks--;
+        audioSource.time = 0.8f;
+        audioSource.Play();
         StartCoroutine(RedFlashEffect());
     }
 
