@@ -49,6 +49,20 @@ public class StageScript : MonoBehaviour
     void OnMouseDown()
     {
         StageData.selectedStage = stageToLoad;
+        switch (stageToLoad)
+        {
+            case "CafeMatcha":
+                StageData.stageDifficulty = 1;
+                break;
+            case "Bench":
+                StageData.stageDifficulty = 2;
+                break;
+            case "VintageStore":
+                StageData.stageDifficulty = 3;
+                break;
+            default:
+                break;
+        }
         SceneManager.LoadScene("attackphase");
     }
 }
