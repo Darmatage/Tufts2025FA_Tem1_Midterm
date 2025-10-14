@@ -9,9 +9,10 @@ using UnityEditor;
 using Unity.VisualScripting;
 
 public class GameHandler : MonoBehaviour{
-    public static int playerStat1;
 
     public GameObject pauseMenu;
+    
+
     void Start()
     {
         if (pauseMenu != null)

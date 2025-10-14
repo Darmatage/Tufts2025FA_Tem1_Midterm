@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class BattleHandlerScript : MonoBehaviour
 {
+
     public GameObject background;
     private SpriteRenderer backgroundImage;
     public Sprite parkBG;

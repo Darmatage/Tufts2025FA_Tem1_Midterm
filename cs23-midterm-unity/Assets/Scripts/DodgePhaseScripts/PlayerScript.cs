@@ -6,20 +6,25 @@ using System.Linq.Expressions;
 
 public class PlayerScript : MonoBehaviour
 {
-    public int maxHealth = 100;
+
+    public int maxHealth;
     public int currentHealth;
     public HealthBarScript healthBar;
     public GameHandler gameHandler;
 
+
     void Start()
     {
-        currentHealth = maxHealth;
+        maxHealth = HealthData.Instance.playerMaxHP;
+        currentHealth = HealthData.Instance.playerHP;
         healthBar.SetMaxHealth(maxHealth);
+        healthBar.SetHealth(currentHealth);
     }
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        HealthData.Instance.playerHP -= damage;
         if (currentHealth <= 0)
         {
             currentHealth = 0;

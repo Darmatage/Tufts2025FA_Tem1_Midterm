@@ -6,6 +6,8 @@ using System.Linq.Expressions;
 
 public class EnemyScript : MonoBehaviour
 {
+
+
     public int maxHealth;
     public int currentHealth;
     public HealthBarScript healthBar;
@@ -14,14 +16,16 @@ public class EnemyScript : MonoBehaviour
 
     void Start()
     {
-        maxHealth = StageData.stageDifficulty * 100;
-        currentHealth = maxHealth;
+        maxHealth = HealthData.Instance.enemyMaxHP;
+        currentHealth = HealthData.Instance.enemyHP;
         healthBar.SetMaxHealth(maxHealth);
+        healthBar.SetHealth(currentHealth);
     }
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        HealthData.Instance.enemyHP -= damage;
         if (currentHealth <= 0)
         {
             currentHealth = 0;

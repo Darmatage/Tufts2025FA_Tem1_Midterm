@@ -392,7 +392,7 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   healthBar: {fileID: 240912287}
-  gameHandler: {fileID: 0}
+  gameHandler: {fileID: 2103235394}
 --- !u!1 &266175900
 GameObject:
   m_ObjectHideFlags: 0
@@ -1664,6 +1664,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2649004591056789298, guid: 469b2fe84ec098d459ef0ea7e58e9499, type: 3}
+      propertyPath: m_TagString
+      value: PauseMenu
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1936,6 +1940,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c563464bbd15b348bad73ae8d0cf37c, type: 3}
+--- !u!114 &2103235394 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7909902722630221478, guid: 5c563464bbd15b348bad73ae8d0cf37c, type: 3}
+  m_PrefabInstance: {fileID: 2103235393}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19485bf21cb653e46a00cfe3ddf13f2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

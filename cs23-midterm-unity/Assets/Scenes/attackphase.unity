@@ -1940,6 +1940,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2649004591056789298, guid: 469b2fe84ec098d459ef0ea7e58e9499, type: 3}
+      propertyPath: m_TagString
+      value: PauseMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 6957622420905107985, guid: 469b2fe84ec098d459ef0ea7e58e9499, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
